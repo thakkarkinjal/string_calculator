@@ -9,5 +9,9 @@ RSpec.describe Calculator do
     it 'should return single number itself for a single number' do
     	expect(Calculator.new.add("4")).to eq(4)
     end
-	end
+
+    it 'should return sum of multiple numbers' do
+    	expect(Calculator.new.add("1,2,4,6")).to eq(13)
+    end
+  end
 end
