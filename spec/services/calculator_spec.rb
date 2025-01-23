@@ -13,5 +13,9 @@ RSpec.describe Calculator do
     it 'should return sum of multiple numbers' do
     	expect(Calculator.new.add("1,2,4,6")).to eq(13)
     end
+
+    it 'handles new lines between numbers' do
+    	expect(Calculator.new.add("1\n,2,5")).to eq(8)
+    end
   end
 end
