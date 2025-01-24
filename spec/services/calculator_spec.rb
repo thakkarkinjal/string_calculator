@@ -17,5 +17,9 @@ RSpec.describe Calculator do
     it 'handles new lines between numbers' do
     	expect(Calculator.new.add("1\n,2,5")).to eq(8)
     end
+
+    it 'handles different delimiters' do
+      expect(Calculator.new.add("//;\n1;2")).to eq(3)
+    end
   end
 end
