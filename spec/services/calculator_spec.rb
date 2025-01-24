@@ -21,5 +21,9 @@ RSpec.describe Calculator do
     it 'handles different delimiters' do
       expect(Calculator.new.add("//;\n1;2")).to eq(3)
     end
+
+    it 'should handle custom delimeters' do
+      expect(Calculator.new.add("//|\n8|7|10")).to eq(25)
+    end
   end
 end
