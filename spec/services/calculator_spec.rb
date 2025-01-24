@@ -25,5 +25,9 @@ RSpec.describe Calculator do
     it 'should handle custom delimeters' do
       expect(Calculator.new.add("//|\n8|7|10")).to eq(25)
     end
+
+    it 'raises an exception for negative numbers' do
+      expect{ Calculator.new.add("4,5,-2,-1") }.to raise_error("Negatives not allowed: -2, -1")
+    end
   end
 end
