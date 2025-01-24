@@ -2,11 +2,11 @@ class Calculator
 
 	def add(numbers)
 		return 0 if numbers.length == 0
+		delimeter = ","
 		if numbers.start_with?("//")
-			if numbers.include?(";")
-				numbers = numbers.gsub(";", ",")
-			end
+			delimeter = numbers.match(/\/\/(.)\n/)[1]
 		end
-		numbers.gsub(/\n/, ',').split(',').map(&:to_i).sum
+		numbers = numbers.gsub(/\/\/(.)\n/, "")
+		numbers.gsub("\n", delimeter).split(delimeter).map(&:to_i).sum
 	end
 end
