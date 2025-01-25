@@ -14,6 +14,6 @@ class Calculator
 		# throws an exception for negative numbers
 		negatives = numbers.select(&:negative?)
 		raise "Negatives not allowed: #{negatives.join(', ')}" if negatives.present?
-		numbers.sum
+		numbers.reject{ |num| num > 1000 }.sum
 	end
 end
