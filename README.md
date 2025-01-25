@@ -1,24 +1,15 @@
-# README
+# String Calculator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project implements a simple string calculator with the following features:
 
-Things you may want to cover:
+* Accepts a string of comma-separated numbers as input.
 
-* Ruby version
+* Returns the sum of the numbers as an integer.
 
-* System dependencies
+* Handle newline as a delimiter.
 
-* Configuration
+* Support custom single/multiple character delimiters.
 
-* Database creation
+* Ignores numbers greater than 1000.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Raise errors for negative numbers.
