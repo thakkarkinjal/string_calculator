@@ -6,7 +6,12 @@ class Calculator
 
 		# handles any custom delimeter
 		if numbers.start_with?("//")
-			delimeter = numbers.match(/\/\/(.)\n/)[1]
+			if numbers.start_with?("//[")
+				delimeter = numbers.match(%r{//\[(.*?)\]})[1]
+				numbers = numbers.split("\n", 2)[1]
+			else
+				delimeter = numbers.match(%r{//(.)\n})[1]
+			end
 		end
 		numbers = numbers.gsub(/\/\/(.)\n/, "")
 		numbers = numbers.gsub("\n", delimeter).split(delimeter).map(&:to_i)
