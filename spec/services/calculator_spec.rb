@@ -37,5 +37,9 @@ RSpec.describe Calculator do
     it 'supports delimeters of any length' do
       expect(Calculator.new.add("//[***]\n1***2***3")).to eq(6)
     end
+
+    it 'allows multiple delimeters' do
+      expect(Calculator.new.add("//[*][%]\n1*2%3")).to eq(6)
+    end
   end
 end
