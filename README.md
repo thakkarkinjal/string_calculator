@@ -36,52 +36,59 @@ This project implements a simple string calculator with the following features:
 
 To use the calculator, create an instance of the `Calculator` class and call the `add` method with a string of numbers.
 
-```markdown
+```ruby
 calculator = Calculator.new
 result = calculator.add("2,3,4")
 puts result  # Output: 9
+```
 
 ### Custom Delimiters
 
 You can specify custom delimiters at the beginning of the string using the format '//[delimiter]\n'.
 
-```markdown
+```ruby
 calculator.add("//;\n2;3;4") # => 9
+```
 
 ### Delimiters of Any Length
 
 Custom delimiters can be of arbitrary length.
 
-```markdown
+```ruby
 calculator.add("//[***]\n2***3***4") # => 9
+```
 
 ### Multiple Delimiters
 
 You can specify multiple delimiters
 
-```markdown
+```ruby
 calculator.add("//[*][%]\n2*3%4") # => 9
+```
 
 ### Handling Newlines
 
 The calculator can handle newlines between numbers.
 
-```markdown
+```ruby
 calculator.add("2\n3,4") # => 9
+```
 
 ### Ignoring Numbers Greater than 1000
 
 Numbers greater than 1000 are ignored in the calculation.
 
-```markdown
+```ruby
 calculator.add("5,1002") # => 5
+```
 
 ### Negative Numbers
 
 If the input string contains negative numbers, an ArgumentError will be raised.
 
-```markdown
+```ruby
 calculator.add("-2,3,4") # => Raises ArgumentError
+```
 
 
 ## Testing
@@ -89,9 +96,10 @@ calculator.add("-2,3,4") # => Raises ArgumentError
 To run the test suite, use RSpec:
 
 
-```markdown
+```ruby
 
 bundle exec rspec
+```
 
 
 ## Ruby and Rails Versions
